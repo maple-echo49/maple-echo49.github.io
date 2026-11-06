@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日大赛最新入口-每日大赛今日入口_每日大赛入口地址导航</title>
+<meta name="description" content="每日大赛最新入口页面，汇集每日大赛最新入口地址与今日可用入口说明，帮助访问者快速了解每日大赛最新入口的访问方式与热点内容线索。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2316181f'/%3E%3Cpath d='M32 10l6.2 15.6L54 32l-15.8 6.4L32 54l-6.2-15.6L10 32l15.8-6.4z' fill='%23ff6a3d'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#1a1b22;
+  --ink-soft:#4a4d5c;
+  --paper:#f6f4ef;
+  --card:#ffffff;
+  --line:#e3ded4;
+  --accent:#ff6a3d;
+  --accent-deep:#d94a1e;
+  --dark:#16181f;
+  --dark-soft:#23262f;
+  --gold:#f2c14e;
+  --radius:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Source Han Sans SC",system-ui,sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+img,svg{display:block}
+.wrap{width:min(1120px,92vw);margin:0 auto}
+
+/* ---------- Header ---------- */
+header.site{
+  position:sticky;top:0;z-index:50;
+  background:rgba(22,24,31,.96);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.header-in{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:16px;padding:12px 0;
+}
+.brand{display:flex;align-items:center;gap:10px;color:#fff;min-width:0}
+.brand-mark{
+  width:38px;height:38px;flex:0 0 38px;border-radius:11px;
+  background:linear-gradient(140deg,#ff8a5c,#ff5a24);
+  display:grid;place-items:center;
+  box-shadow:0 4px 14px rgba(255,106,61,.35);
+}
+.brand-mark svg{width:22px;height:22px}
+.brand-text{
+  font-size:16px;font-weight:700;letter-spacing:.02em;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+nav.main{display:flex;align-items:center;gap:4px;flex-wrap:wrap}
+nav.main a{
+  color:#cfd2dc;font-size:14px;padding:7px 12px;border-radius:9px;
+  transition:background .18s,color .18s;white-space:nowrap;
+}
+nav.main a:hover{background:rgba(255,255,255,.1);color:#fff}
+.nav-cta{
+  background:var(--accent)!important;color:#fff!important;font-weight:600;
+  padding:8px 16px!important;
+}
+.nav-cta:hover{background:var(--accent-deep)!important}
+.menu-btn{
+  display:none;background:none;border:1px solid rgba(255,255,255,.25);
+  color:#fff;border-radius:9px;padding:7px 12px;font-size:14px;cursor:pointer;
+}
+
+/* ---------- Hero ---------- */
+.hero{
+  background:
+    radial-gradient(900px 420px at 82% -10%,rgba(255,106,61,.22),transparent 70%),
+    radial-gradient(700px 380px at 8% 110%,rgba(242,193,78,.13),transparent 70%),
+    var(--dark);
+  color:#fff;padding:56px 0 64px;position:relative;overflow:hidden;
+}
+.hero::after{
+  content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;
+  border:1px solid rgba(255,255,255,.07);border-radius:50%;
+}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;position:relative;z-index:1}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12.5px;letter-spacing:.12em;color:var(--gold);
+  border:1px solid rgba(242,193,78,.4);border-radius:999px;
+  padding:4px 13px;margin-bottom:20px;
+}
+.eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--gold)}
+h1{
+  font-size:clamp(28px,4.4vw,46px);line-height:1.22;font-weight:800;
+  letter-spacing:-.01em;margin-bottom:18px;
+}
+h1 .hl{
+  background:linear-gradient(100deg,#ff9a6e,#ff5a24);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero p.lead{
+  color:#c4c8d4;font-size:16px;max-width:38em;margin-bottom:26px;
+}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  border-radius:11px;padding:12px 22px;font-size:15px;font-weight:600;
+  transition:transform .16s,box-shadow .16s,background .16s;
+}
+.btn-primary{background:var(--accent);color:#fff;box-shadow:0 8px 22px rgba(255,90,36,.32)}
+.btn-primary:hover{background:var(--accent-deep);transform:translateY(-1px)}
+.btn-ghost{border:1px solid rgba(255,255,255,.28);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.1)}
+.btn[aria-disabled="true"]{
+  opacity:.5;cursor:not-allowed;pointer-events:none;
+}
+.hero-note{
+  margin-top:22px;font-size:13px;color:#8b90a0;display:flex;gap:16px;flex-wrap:wrap;
+}
+.hero-note span{display:inline-flex;align-items:center;gap:6px}
+
+/* hero visual card */
+.hero-visual{
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:20px;padding:22px;
+}
+.hero-visual .hv-title{
+  font-size:13px;color:#9aa0b0;letter-spacing:.08em;margin-bottom:14px;
+}
+.hv-list{display:flex;flex-direction:column;gap:10px}
+.hv-item{
+  display:flex;align-items:center;gap:12px;
+  background:rgba(255,255,255,.05);border-radius:12px;padding:11px 13px;
+  font-size:14px;color:#e6e8ef;
+}
+.hv-item .num{
+  width:24px;height:24px;flex:0 0 24px;border-radius:7px;
+  display:grid;place-items:center;font-size:12px;font-weight:700;
+  background:rgba(255,106,61,.2);color:#ff9a6e;
+}
+.hv-item .tag{
+  margin-left:auto;font-size:11.5px;color:#1a1b22;background:var(--gold);
+  border-radius:6px;padding:1px 8px;font-weight:700;
+}
+.hv-item:nth-child(2) .tag{background:#8fd6b0}
+.hv-item:nth-child(3) .tag{background:#b9c4e8}
+
+/* ---------- Section base ---------- */
+section.block{padding:64px 0}
+.sec-head{margin-bottom:34px;max-width:44em}
+.sec-kicker{
+  font-size:12.5px;letter-spacing:.14em;color:var(--accent-deep);
+  font-weight:700;margin-bottom:8px;
+}
+h2{font-size:clamp(22px,2.7vw,30px);line-height:1.3;font-weight:800;letter-spacing:-.01em}
+.sec-head p{color:var(--ink-soft);font-size:15px;margin-top:10px}
+
+/* ---------- Entry cards ---------- */
+.cards-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.entry-card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:26px 24px;display:flex;flex-direction:column;gap:10px;
+  transition:transform .18s,box-shadow .18s,border-color .18s;
+}
+.entry-card:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(26,27,34,.08);border-color:#d3ccc0}
+.entry-icon{
+  width:44px;height:44px;border-radius:12px;
+  background:linear-gradient(140deg,#fff1e9,#ffe1d1);
+  display:grid;place-items:center;margin-bottom:4px;
+}
+.entry-icon svg{width:23px;height:23px}
+.entry-card h3{font-size:17.5px;font-weight:700}
+.entry-card p{font-size:14.5px;color:var(--ink-soft);flex:1}
+.card-link{
+  font-size:14px;font-weight:600;color:var(--accent-deep);
+  display:inline-flex;align-items:center;gap:5px;margin-top:4px;
+}
+.card-link:hover{gap:9px}
+.card-link svg{width:14px;height:14px;transition:transform .16s}
+
+/* ---------- Steps ---------- */
+.steps{
+  background:var(--dark);color:#fff;border-radius:22px;padding:46px clamp(24px,4vw,48px);
+}
+.steps .sec-kicker{color:var(--gold)}
+.steps h2{color:#fff}
+.steps .sec-head p{color:#a9aebd}
+.step-row{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:8px}
+.step{position:relative;padding-top:20px;border-top:2px solid rgba(255,255,255,.13)}
+.step .sn{
+  position:absolute;top:-15px;left:0;font-size:12px;font-weight:800;letter-spacing:.1em;
+  background:var(--accent);color:#fff;border-radius:6px;padding:2px 9px;
+}
+.step h3{font-size:16.5px;margin-bottom:8px;font-weight:700}
+.step p{font-size:14px;color:#a9aebd}
+
+/* ---------- Content + aside ---------- */
+.split{display:grid;grid-template-columns:1.55fr 1fr;gap:40px;align-items:start}
+.prose h2{margin-bottom:18px}
+.prose h3{font-size:17.5px;margin:24px 0 8px;font-weight:700}
+.prose p{font-size:15px;color:var(--ink-soft);margin-bottom:12px}
+.prose p strong{color:var(--ink);font-weight:700}
+.aside-card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px;position:sticky;top:82px;
+}
+.aside-card h3{font-size:16px;margin-bottom:14px}
+.faq-item{border-bottom:1px solid var(--line);padding:12px 0}
+.faq-item:last-child{border-bottom:0;padding-bottom:0}
+.faq-item summary{
+  cursor:pointer;font-size:14.5px;font-weight:600;list-style:none;
+  display:flex;justify-content:space-between;gap:10px;align-items:flex-start;
+}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{
+  content:"+";color:var(--accent);font-weight:700;font-size:17px;line-height:1;flex:0 0 auto;
+}
+.faq-item[open] summary::after{content:"–"}
+.faq-item p{font-size:13.5px;color:var(--ink-soft);margin-top:8px}
+
+/* ---------- Hot list ---------- */
+.hot-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.hot{
+  background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:18px 20px;display:flex;gap:14px;
+}
+.hot .rank{
+  font-size:22px;font-weight:800;color:#e6dfd2;line-height:1;flex:0 0 auto;
+  font-variant-numeric:tabular-nums;
+}
+.hot h3{font-size:15.5px;font-weight:700;margin-bottom:4px}
+.hot p{font-size:13.5px;color:var(--ink-soft)}
+.hot .meta{
+  margin-top:8px;font-size:12px;color:#8d8a80;display:flex;gap:10px;flex-wrap:wrap;
+}
+.hot .meta b{color:var(--accent-deep);font-weight:600}
+
+/* ---------- Notice ---------- */
+.notice{
+  display:flex;gap:14px;align-items:flex-start;
+  background:#fff8ee;border:1px solid #f3e2c6;border-radius:14px;
+  padding:18px 20px;margin-top:34px;
+}
+.notice svg{width:20px;height:20px;flex:0 0 20px;margin-top:3px}
+.notice p{font-size:13.5px;color:#7b6444}
+
+/* ---------- Footer ---------- */
+footer.site{
+  background:var(--dark);color:#a9aebd;padding:46px 0 30px;margin-top:64px;
+}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px}
+.foot-brand{display:flex;align-items:center;gap:10px;color:#fff;margin-bottom:12px}
+.foot-brand .brand-mark{width:34px;height:34px;flex:0 0 34px;border-radius:10px}
+.foot-brand .brand-text{font-size:15px}
+.foot-grid p{font-size:13.5px;line-height:1.7}
+.foot-col h4{font-size:13px;color:#fff;letter-spacing:.08em;margin-bottom:12px}
+.foot-col a{display:block;font-size:13.5px;padding:4px 0;color:#a9aebd}
+.foot-col a:hover{color:#fff}
+.foot-bottom{
+  border-top:1px solid rgba(255,255,255,.09);margin-top:32px;padding-top:18px;
+  font-size:12.5px;color:#757a8a;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+}
+
+/* ---------- Responsive ---------- */
+@media(max-width:960px){
+  .hero-grid{grid-template-columns:1fr;gap:34px}
+  .hero{padding:40px 0 48px}
+  .cards-3{grid-template-columns:1fr 1fr}
+  .split{grid-template-columns:1fr;gap:28px}
+  .aside-card{position:static}
+  .step-row{grid-template-columns:1fr;gap:30px}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:720px){
+  nav.main{
+    display:none;position:absolute;top:100%;left:0;right:0;
+    flex-direction:column;align-items:stretch;gap:2px;
+    background:var(--dark-soft);padding:10px 4vw 16px;
+    border-bottom:1px solid rgba(255,255,255,.1);
+  }
+  nav.main.open{display:flex}
+  nav.main a{padding:11px 12px}
+  .menu-btn{display:inline-block}
+  .header-in{position:relative}
+  .brand-text{font-size:14.5px}
+  .cards-3{grid-template-columns:1fr}
+  .hot-grid{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr}
+  section.block{padding:46px 0}
+  .steps{padding:34px 22px;border-radius:16px}
+  .hero-note{gap:10px;font-size:12.5px}
+  .btn{padding:11px 18px;font-size:14.5px}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap header-in">
+    <a class="brand" href="#top" aria-label="每日大赛最新入口 首页">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M12 2.6l2.6 6.8 7.1 2.6-7.1 2.6L12 21.4l-2.6-6.8L2.3 12l7.1-2.6z" fill="#fff"/>
+        </svg>
+      </span>
+      <span class="brand-text">每日大赛最新入口</span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mainNav">菜单</button>
+    <nav class="main" id="mainNav" aria-label="主导航">
+      <a href="#entry">入口说明</a>
+      <a href="#howto">访问步骤</a>
+      <a href="#hot">今日热点</a>
+      <a href="#faq">常见问题</a>
+      <a class="nav-cta" href="#entry">进入入口</a>
+    </nav>
+  </div>
+</header>
+
+<div id="top"></div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow"><span class="dot"></span>今日入口 · 可用状态说明</span>
+      <h1>每日大赛最新入口</h1>
+      <p class="lead">
+        这里整理每日大赛最新入口的访问路径与今日热点线索。页面把入口说明、访问步骤和常见问题放在同一处，方便你按顺序找到每日大赛最新入口对应的内容，再决定从哪个入口进入查看。
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#entry">
+          查看入口说明
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="btn btn-ghost" href="#hot">先看今日热点</a>
+      </div>
+      <div class="hero-note">
+        <span>◆ 入口信息按日更新</span>
+        <span>◆ 不收集账号信息</span>
+        <span>◆ 移动端可直接阅读</span>
+      </div>
+    </div>
+    <aside class="hero-visual" aria-label="今日入口概览">
+      <div class="hv-title">今日入口概览</div>
+      <div class="hv-list">
+        <div class="hv-item"><span class="num">01</span>主入口页面<span class="tag">推荐</span></div>
+        <div class="hv-item"><span class="num">02</span>备用访问路径<span class="tag">备用</span></div>
+        <div class="hv-item"><span class="num">03</span>热点内容汇总<span class="tag">可看</span></div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ENTRY -->
+<section class="block" id="entry">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-kicker">入口说明</div>
+      <h2>每日大赛最新入口的三种访问路径</h2>
+      <p>不同访问习惯对应不同入口。先确认自己需要看什么，再选择对应的每日大赛最新入口，可以减少反复跳转。</p>
+    </div>
+    <div class="cards-3">
+      <article class="entry-card">
+        <div class="entry-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M4 11l8-7 8 7v9a1 1 0 0 1-1 1h-5v-6H10v6H5a1 1 0 0 1-1-1z" stroke="#d94a1e" stroke-width="1.7" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>主入口页面</h3>
+        <p>适合直接查看当日内容的访问者。主入口集中当日热点条目与说明文字，打开后即可从上往下阅读，不需要额外筛选。</p>
+        <a class="card-link" href="#howto">看访问步骤
+          <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#d94a1e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </article>
+      <article class="entry-card">
+        <div class="entry-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h10M4 17h7" stroke="#d94a1e" stroke-width="1.8" stroke-linecap="round"/><circle cx="18" cy="16" r="3.2" stroke="#d94a1e" stroke-width="1.7"/></svg>
+        </div>
+        <h3>备用访问路径</h3>
+        <p>当主入口短时间内访问集中时，可改用备用路径。备用路径内容与主入口一致，只是访问线路不同，阅读顺序保持相同。</p>
+        <a class="card-link" href="#faq">为什么需要备用
+          <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#d94a1e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </article>
+      <article class="entry-card">
+        <div class="entry-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 3.2l2.4 6.1 6.4 2.3-6.4 2.3L12 20l-2.4-6.1L3.2 11.6l6.4-2.3z" stroke="#d94a1e" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>热点内容汇总</h3>
+        <p>只想了解今天讨论什么，可先看热点汇总再决定是否进入主页面。汇总按条目排列，每条附一句说明，便于快速判断。</p>
+        <a class="card-link" href="#hot">查看今日热点
+          <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#d94a1e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </article>
+    </div>
+
+    <div class="notice">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="#c99a4b" stroke-width="1.7"/><path d="M12 7.6v5.2M12 16.2v.4" stroke="#c99a4b" stroke-width="1.9" stroke-linecap="round"/></svg>
+      <p>本页只说明每日大赛最新入口的访问方式与内容结构，不代替任何第三方页面作承诺。入口是否可用、内容是否完整，以实际打开后的页面显示为准；如遇打不开，可先换备用路径再试。</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW TO -->
+<section class="block" id="howto" style="padding-top:0">
+  <div class="wrap">
+    <div class="steps">
+      <div class="sec-head">
+        <div class="sec-kicker">访问步骤</div>
+        <h2>三步找到每日大赛最新入口</h2>
+        <p>把入口访问拆成三个动作，按顺序做即可，不必反复搜索同一个词。</p>
+      </div>
+      <div class="step-row">
+        <div class="step">
+          <span class="sn">STEP 01</span>
+          <h3>确认今日日期</h3>
+          <p>每日大赛最新入口以当天的内容为准。先确认设备时间正确，避免看到隔日缓存的旧条目。</p>
+        </div>
+        <div class="step">
+          <span class="sn">STEP 02</span>
+          <h3>选择入口路径</h3>
+          <p>从本页入口说明中选择主入口或备用路径。主入口打不开时再切换，不必同时打开多个。</p>
+        </div>
+        <div class="step">
+          <span class="sn">STEP 03</span>
+          <h3>从上到下阅读</h3>
+          <p>进入后按条目顺序阅读，先看标题与摘要，再决定是否深入。这样能更快判断内容是否合你所需。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT + ASIDE -->
+<section class="block" style="padding-top:0">
+  <div class="wrap split">
+    <div class="prose">
+      <div class="sec-kicker">入口背后的内容结构</div>
+      <h2>每日大赛最新入口里通常有什么</h2>
+      <p>很多人搜索<strong>每日大赛最新入口</strong>，实际需求是“今天的内容在哪里看”。因此入口页面一般承担两件事：一是给出可点击的访问位置，二是把当天条目的标题和要点先列出来，让人不用进入就能判断值不值得看。</p>
+      <p>从内容组织看，每日大赛最新入口通常包含<strong>条目列表、单条摘要、更新时间</strong>三部分。列表决定阅读顺序，摘要决定是否点开，更新时间决定信息的新旧。三者缺一，入口页就容易变成只有链接的空壳。</p>
+
+      <h3>为什么强调“最新”</h3>
+      <p>“每日”意味着内容按天滚动，昨天的条目会退到后面。判断一个每日大赛最新入口是否可靠，可以看它有没有明确的日期标识和更新说明。只有链接、没有日期与摘要的页面，往往需要额外打开才能确认内容，体验会差一些。</p>
+
+      <h3>入口页与内容页的分工</h3>
+      <p>入口页负责“找到”，内容页负责“看完”。把两件事混在一个页面里，容易出现入口被大量正文挤到下方的情况。合理的做法是入口在上、说明在下，让需要快速进入的人先拿到入口，需要了解背景的人继续往下读。这也是本页把入口说明放在首屏之后的原因。</p>
+
+      <h3>移动端访问的注意点</h3>
+      <p>多数访问发生在手机上。移动端看每日大赛最新入口，建议一次只开一个页面，避免多个标签互相覆盖；阅读时优先看条目标题和摘要，再决定是否继续。若页面加载缓慢，可先切换网络再重试，不必反复刷新。</p>
+    </div>
+
+    <aside class="aside-card" id="faq">
+      <h3>常见问题</h3>
+      <details class="faq-item" open>
+        <summary>每日大赛最新入口每天都会变吗？</summary>
+        <p>入口地址本身通常相对固定，变化更多的是入口内的当日条目。判断新旧，看页面上的日期与更新时间即可。</p>
+      </details>
+      <details class="faq-item">
+        <summary>主入口打不开怎么办？</summary>
+        <p>先换备用访问路径，再检查网络与设备时间。短时间内集中访问时，稍等片刻再试通常更有效。</p>
+      </details>
+      <details class="faq-item">
+        <summary>需要注册或填写信息吗？</summary>
+        <p>本页仅提供入口说明与阅读指引，不要求填写账号、手机号等个人信息。遇到要求填写的情况，请先核实来源。</p>
+      </details>
+      <details class="faq-item">
+        <summary>入口内容与热点汇总一致吗？</summary>
+        <p>热点汇总是入口内容的精简版，条目顺序一致，摘要更短。想快速了解可先看汇总，想细看再进入口。</p>
+      </details>
+    </aside>
+  </div>
+</section>
+
+<!-- HOT -->
+<section class="block" id="hot" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-kicker">今日热点</div>
+      <h2>入口内的热点条目一览</h2>
+      <p>下面按讨论度排列今日条目，每条附一句说明。读完再决定是否通过每日大赛最新入口查看完整内容。</p>
+    </div>
+    <div class="hot-grid">
+      <article class="hot">
+        <span class="rank">01</span>
+        <div>
+          <h3>当日主条目讨论集中</h3>
+          <p>讨论集中在同一主题，评论区更新频繁，适合先看摘要再决定是否深入。</p>
+          <div class="meta"><span>更新：今日</span><span>类型：<b>热点</b></span></div>
+        </div>
+      </article>
+      <article class="hot">
+        <span class="rank">02</span>
+        <div>
+          <h3>多条内容交叉出现</h3>
+          <p>同一话题在多条内容中被提及，信息需要交叉比对，建议按时间顺序阅读。</p>
+          <div class="meta"><span>更新：今日</span><span>类型：<b>汇总</b></span></div>
+        </div>
+      </article>
+      <article class="hot">
+        <span class="rank">03</span>
+        <div>
+          <h3>旧条目被重新提起</h3>
+          <p>早前内容因新进展再次被讨论，阅读时注意区分原始时间与当前说法。</p>
+          <div class="meta"><span>更新：今日</span><span>类型：<b>回溯</b></span></div>
+        </div>
+      </article>
+      <article class="hot">
+        <span class="rank">04</span>
+        <div>
+          <h3>入口访问量明显上升</h3>
+          <p>晚间访问较集中，若页面加载慢，可改用备用路径或错峰查看。</p>
+          <div class="meta"><span>更新：今日</span><span>类型：<b>提示</b></span></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="notice">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v10m0 0l4-4m-4 4l-4-4" stroke="#c99a4b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 16v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3" stroke="#c99a4b" stroke-width="1.8" stroke-linecap="round"/></svg>
+      <p>入口页面说明文档暂以占位形式提供，下载按钮已置为不可用状态，待真实地址确认后替换。当前阅读本页即可获得每日大赛最新入口的完整说明。</p>
+      <a class="btn btn-primary" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1" style="margin-left:auto;flex:0 0 auto;font-size:13.5px;padding:9px 16px">下载</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 2.6l2.6 6.8 7.1 2.6-7.1 2.6L12 21.4l-2.6-6.8L2.3 12l7.1-2.6z" fill="#fff"/></svg>
+          </span>
+          <span class="brand-text">每日大赛最新入口</span>
+        </div>
+        <p>每日大赛最新入口说明页，整理入口路径、访问步骤与今日热点线索，帮助访问者更快找到当天内容。</p>
+      </div>
+      <div class="foot-col">
+        <h4>页面导航</h4>
+        <a href="#entry">入口说明</a>
+        <a href="#howto">访问步骤</a>
+        <a href="#hot">今日热点</a>
+        <a href="#faq">常见问题</a>
+      </div>
+      <div class="foot-col">
+        <h4>使用提示</h4>
+        <a href="#faq">入口打不开怎么办</a>
+        <a href="#faq">是否需要注册</a>
+        <a href="#entry">备用路径说明</a>
+        <a href="#top">回到顶部</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>每日大赛最新入口 · 入口信息按日更新</span>
+      <span>内容以实际页面显示为准</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn=document.getElementById('menuBtn');
+  var nav=document.getElementById('mainNav');
+  if(!btn||!nav)return;
+  btn.addEventListener('click',function(){
+    var open=nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open?'true':'false');
+  });
+  nav.addEventListener('click',function(e){
+    if(e.target.tagName==='A'&&window.innerWidth<=720){
+      nav.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+    }
+  });
+})();
+</script>
+</body>
+</html>
