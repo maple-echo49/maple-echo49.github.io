@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>动漫官网-动漫官网作品库_新番动画在线观看与追番导航</title>
+<meta name="description" content="动漫官网是动画作品的集中浏览与追番入口，按新番、剧场版、经典长篇与声优访谈分区呈现，提供作品简介、放送信息与观看指引。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%231b1f3b'/%3E%3Ccircle cx='24' cy='28' r='6' fill='%23ff8fb1'/%3E%3Ccircle cx='40' cy='28' r='6' fill='%23ffd166'/%3E%3Cpath d='M18 44c4-6 24-6 28 0' stroke='%237cd4f7' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --ink:#1b1f3b;
+    --ink-soft:#4a4f74;
+    --paper:#f6f4fb;
+    --card:#ffffff;
+    --line:#e3dff0;
+    --pink:#ff6f9c;
+    --pink-deep:#e0497a;
+    --sky:#3aa8d8;
+    --gold:#f2b53c;
+    --radius:16px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,"Segoe UI",sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none;}
+  img,svg{display:block;}
+  .wrap{width:min(1120px,92vw);margin:0 auto;}
+
+  /* 页头 */
+  header.site{
+    position:sticky;top:0;z-index:50;
+    background:rgba(246,244,251,.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .head-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:18px;padding:14px 0;flex-wrap:wrap;
+  }
+  .brand{display:flex;align-items:center;gap:10px;}
+  .brand-mark{width:38px;height:38px;flex:none;}
+  .brand-text{
+    font-size:1.2rem;font-weight:800;letter-spacing:.02em;
+    color:var(--ink);
+  }
+  nav.main{display:flex;gap:22px;flex-wrap:wrap;}
+  nav.main a{
+    font-size:.95rem;color:var(--ink-soft);font-weight:600;
+    padding:4px 0;border-bottom:2px solid transparent;transition:.2s;
+  }
+  nav.main a:hover,nav.main a:focus{border-bottom-color:var(--pink);color:var(--ink);}
+  .head-cta{
+    display:inline-flex;align-items:center;gap:6px;
+    background:var(--ink);color:#fff;font-weight:700;font-size:.9rem;
+    padding:9px 18px;border-radius:999px;transition:.2s;
+  }
+  .head-cta:hover{background:var(--pink-deep);}
+
+  /* 首屏 */
+  .hero{
+    position:relative;overflow:hidden;
+    background:linear-gradient(160deg,#1b1f3b 0%,#2b2f5c 55%,#3d3268 100%);
+    color:#fff;padding:64px 0 72px;
+  }
+  .hero::after{
+    content:"";position:absolute;right:-120px;top:-80px;width:420px;height:420px;
+    background:radial-gradient(circle at 40% 40%,rgba(255,111,156,.45),transparent 68%);
+    border-radius:50%;
+  }
+  .hero::before{
+    content:"";position:absolute;left:-140px;bottom:-160px;width:380px;height:380px;
+    background:radial-gradient(circle at 50% 50%,rgba(58,168,216,.4),transparent 70%);
+    border-radius:50%;
+  }
+  .hero-grid{
+    position:relative;z-index:2;
+    display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;
+  }
+  .tagline{
+    display:inline-block;font-size:.8rem;letter-spacing:.16em;
+    background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);
+    padding:5px 14px;border-radius:999px;margin-bottom:18px;color:#ffd7e4;
+  }
+  h1{
+    font-size:clamp(2rem,4.4vw,3.1rem);line-height:1.25;font-weight:900;
+    letter-spacing:.01em;margin-bottom:18px;
+  }
+  h1 .hl{color:var(--gold);}
+  .hero p.lead{
+    font-size:1.02rem;color:#d6d5ea;max-width:34em;margin-bottom:26px;
+  }
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;align-items:center;}
+  .btn-primary{
+    background:var(--pink);color:#fff;font-weight:800;
+    padding:13px 30px;border-radius:999px;font-size:1rem;
+    box-shadow:0 10px 26px rgba(255,111,156,.32);transition:.2s;
+  }
+  .btn-primary:hover{background:#ff5c8d;transform:translateY(-1px);}
+  .btn-ghost{
+    border:1px solid rgba(255,255,255,.4);color:#fff;font-weight:700;
+    padding:12px 26px;border-radius:999px;font-size:.95rem;transition:.2s;
+  }
+  .btn-ghost:hover{background:rgba(255,255,255,.12);}
+  .hero-card{
+    background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);
+    border-radius:var(--radius);padding:22px;backdrop-filter:blur(6px);
+  }
+  .hero-card h2{font-size:.95rem;color:#ffd7e4;letter-spacing:.08em;margin-bottom:14px;font-weight:700;}
+  .mini-list{list-style:none;display:grid;gap:12px;}
+  .mini-list li{
+    display:flex;gap:12px;align-items:flex-start;
+    padding-bottom:12px;border-bottom:1px dashed rgba(255,255,255,.16);
+  }
+  .mini-list li:last-child{border-bottom:none;padding-bottom:0;}
+  .mini-tag{
+    flex:none;font-size:.72rem;font-weight:800;padding:2px 8px;border-radius:6px;
+    background:var(--sky);color:#04222f;margin-top:4px;
+  }
+  .mini-tag.p{background:var(--pink);color:#3d0016;}
+  .mini-tag.g{background:var(--gold);color:#3a2600;}
+  .mini-list strong{display:block;font-size:.95rem;}
+  .mini-list span{font-size:.82rem;color:#bcbbd6;}
+
+  /* 通用区块 */
+  section{padding:64px 0;}
+  .sec-head{margin-bottom:34px;}
+  .sec-kicker{
+    font-size:.78rem;letter-spacing:.18em;color:var(--pink-deep);
+    font-weight:800;margin-bottom:8px;
+  }
+  h2.sec-title{font-size:clamp(1.4rem,2.6vw,1.85rem);font-weight:900;line-height:1.4;}
+  .sec-desc{color:var(--ink-soft);font-size:.96rem;margin-top:10px;max-width:52em;}
+
+  /* 新番卡片 */
+  .card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .anime-card{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    overflow:hidden;display:flex;flex-direction:column;transition:.25s;
+  }
+  .anime-card:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(27,31,59,.1);}
+  .card-art{height:132px;position:relative;overflow:hidden;}
+  .card-art svg{width:100%;height:100%;}
+  .card-body{padding:18px 20px 22px;display:flex;flex-direction:column;gap:8px;flex:1;}
+  .card-body h3{font-size:1.06rem;font-weight:800;}
+  .card-meta{font-size:.8rem;color:var(--ink-soft);display:flex;gap:10px;flex-wrap:wrap;}
+  .card-meta em{font-style:normal;color:var(--pink-deep);font-weight:700;}
+  .card-body p{font-size:.9rem;color:var(--ink-soft);}
+  .card-link{margin-top:auto;font-size:.86rem;font-weight:800;color:var(--sky);}
+  .card-link:hover{color:var(--pink-deep);}
+
+  /* 剧场版与经典 */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:26px;}
+  .panel{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:28px;
+  }
+  .panel h2{font-size:1.25rem;font-weight:900;margin-bottom:6px;}
+  .panel .sub{font-size:.84rem;color:var(--pink-deep);font-weight:700;letter-spacing:.06em;margin-bottom:16px;}
+  .plain-list{list-style:none;display:grid;gap:14px;}
+  .plain-list li{padding-bottom:14px;border-bottom:1px dashed var(--line);}
+  .plain-list li:last-child{border-bottom:none;padding-bottom:0;}
+  .plain-list b{display:block;font-size:.98rem;margin-bottom:3px;}
+  .plain-list span{font-size:.87rem;color:var(--ink-soft);}
+
+  /* 筛选 */
+  .filter-sec{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .filter-bar{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:26px;}
+  .filter-bar input{
+    flex:1 1 260px;min-width:0;padding:11px 16px;border-radius:999px;
+    border:1px solid var(--line);background:var(--paper);font-size:.95rem;
+    font-family:inherit;color:var(--ink);outline:none;transition:.2s;
+  }
+  .filter-bar input:focus{border-color:var(--pink);box-shadow:0 0 0 3px rgba(255,111,156,.15);}
+  .chips{display:flex;gap:8px;flex-wrap:wrap;}
+  .chip{
+    border:1px solid var(--line);background:var(--paper);color:var(--ink-soft);
+    font-size:.84rem;font-weight:700;padding:8px 16px;border-radius:999px;
+    cursor:pointer;font-family:inherit;transition:.2s;
+  }
+  .chip[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink);}
+  .result-note{font-size:.85rem;color:var(--ink-soft);margin-bottom:18px;}
+  .result-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+  .res-item{
+    background:var(--paper);border:1px solid var(--line);border-radius:12px;
+    padding:16px;transition:.2s;
+  }
+  .res-item:hover{border-color:var(--pink);}
+  .res-item b{display:block;font-size:.95rem;margin-bottom:4px;}
+  .res-item span{font-size:.8rem;color:var(--ink-soft);}
+  .empty-msg{display:none;padding:20px;color:var(--ink-soft);font-size:.92rem;}
+
+  /* 声优访谈 */
+  .voice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .quote{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:24px;position:relative;
+  }
+  .quote::before{
+    content:"“";position:absolute;top:6px;right:18px;font-size:3.4rem;
+    color:var(--line);font-family:Georgia,serif;line-height:1;
+  }
+  .quote p{font-size:.93rem;color:var(--ink-soft);margin-bottom:14px;position:relative;z-index:1;}
+  .quote b{font-size:.9rem;display:block;}
+  .quote span{font-size:.8rem;color:var(--pink-deep);font-weight:700;}
+
+  /* 观看指引 */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;counter-reset:step;}
+  .step{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:26px;position:relative;
+  }
+  .step::before{
+    counter-increment:step;content:"0" counter(step);
+    font-size:1.6rem;font-weight:900;color:var(--pink);display:block;margin-bottom:10px;
+  }
+  .step h3{font-size:1.02rem;font-weight:800;margin-bottom:8px;}
+  .step p{font-size:.9rem;color:var(--ink-soft);}
+
+  /* 下载条 */
+  .cta-band{
+    background:linear-gradient(120deg,#1b1f3b,#3d3268);
+    color:#fff;border-radius:22px;padding:44px 40px;
+    display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;
+  }
+  .cta-band h2{font-size:1.4rem;font-weight:900;margin-bottom:8px;}
+  .cta-band p{font-size:.94rem;color:#cfcee4;max-width:36em;}
+  .btn-download{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--gold);color:#2a1c00;font-weight:900;font-size:1rem;
+    padding:14px 34px;border-radius:999px;pointer-events:none;
+  }
+
+  /* 页尾 */
+  footer.site{
+    background:#141733;color:#b8b7cd;padding:52px 0 30px;margin-top:20px;
+  }
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:34px;margin-bottom:36px;}
+  footer .brand-text{color:#fff;}
+  footer p{font-size:.88rem;line-height:1.8;margin-top:12px;}
+  footer h3{font-size:.92rem;color:#fff;margin-bottom:12px;letter-spacing:.04em;}
+  footer ul{list-style:none;display:grid;gap:9px;}
+  footer ul a{font-size:.87rem;color:#b8b7cd;transition:.2s;}
+  footer ul a:hover{color:var(--pink);}
+  .foot-bottom{
+    border-top:1px solid rgba(255,255,255,.12);padding-top:22px;
+    font-size:.8rem;color:#8d8ca8;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+  }
+
+  /* 响应式 */
+  @media (max-width:960px){
+    .hero-grid{grid-template-columns:1fr;gap:34px;}
+    .card-grid{grid-template-columns:repeat(2,1fr);}
+    .result-grid{grid-template-columns:repeat(2,1fr);}
+    .voice-grid{grid-template-columns:1fr 1fr;}
+    .split{grid-template-columns:1fr;}
+    .steps{grid-template-columns:1fr;}
+    .foot-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:620px){
+    .head-inner{padding:12px 0;}
+    nav.main{gap:14px;order:3;width:100%;}
+    nav.main a{font-size:.88rem;}
+    .hero{padding:44px 0 52px;}
+    section{padding:46px 0;}
+    .card-grid{grid-template-columns:1fr;}
+    .result-grid{grid-template-columns:1fr;}
+    .voice-grid{grid-template-columns:1fr;}
+    .foot-grid{grid-template-columns:1fr;}
+    .cta-band{padding:32px 24px;}
+    .panel{padding:22px;}
+  }
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap head-inner">
+    <a class="brand" href="#top" aria-label="动漫官网首页">
+      <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="16" fill="#1b1f3b"/>
+        <circle cx="24" cy="28" r="6" fill="#ff8fb1"/>
+        <circle cx="40" cy="28" r="6" fill="#ffd166"/>
+        <path d="M18 44c4-6 24-6 28 0" stroke="#7cd4f7" stroke-width="3" fill="none" stroke-linecap="round"/>
+      </svg>
+      <span class="brand-text">动漫官网</span>
+    </a>
+    <nav class="main" aria-label="主导航">
+      <a href="#new">新番放送</a>
+      <a href="#theater">剧场与长篇</a>
+      <a href="#library">作品库</a>
+      <a href="#voice">声优访谈</a>
+      <a href="#guide">观看指引</a>
+    </nav>
+    <a class="head-cta" href="#library">进入作品库</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- 首屏 -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="tagline">ANIME PORTAL · 动画作品集中入口</span>
+        <h1>动漫官网</h1>
+        <p class="lead">在动漫官网，动画作品按新番放送、剧场版与经典长篇、声优访谈三条线索归类，每部作品给出简介、放送时段与观看入口说明，方便按自己的节奏追番。</p>
+        <div class="hero-actions">
+          <a class="btn-primary" href="#new">查看本季新番</a>
+          <a class="btn-ghost" href="#library">按类型筛选</a>
+        </div>
+      </div>
+      <aside class="hero-card" aria-label="本周放送提示">
+        <h2>本周放送提示</h2>
+        <ul class="mini-list">
+          <li>
+            <span class="mini-tag p">周一</span>
+            <div><strong>校园群像新番</strong><span>更新至第 6 话 · 20:00 放送</span></div>
+          </li>
+          <li>
+            <span class="mini-tag">周四</span>
+            <div><strong>奇幻冒险系列</strong><span>更新至第 9 话 · 22:30 放送</span></div>
+          </li>
+          <li>
+            <span class="mini-tag g">周六</span>
+            <div><strong>剧场版特别放送</strong><span>单集完结 · 19:00 上线</span></div>
+          </li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 新番放送 -->
+  <section id="new">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-kicker">NEW SEASON</div>
+        <h2 class="sec-title">本季新番放送</h2>
+        <p class="sec-desc">动漫官网按放送日整理当季新作，标注话数进度与作品基调，帮助先判断是否合口味，再决定追更顺序。</p>
+      </div>
+      <div class="card-grid">
+        <article class="anime-card">
+          <div class="card-art">
+            <svg viewBox="0 0 320 132" preserveAspectRatio="none" aria-hidden="true">
+              <rect width="320" height="132" fill="#ffe3ec"/>
+              <circle cx="70" cy="66" r="34" fill="#ff6f9c" opacity=".55"/>
+              <circle cx="120" cy="46" r="20" fill="#f2b53c" opacity=".6"/>
+              <path d="M0 110 Q80 70 160 108 T320 96 V132 H0Z" fill="#3aa8d8" opacity=".35"/>
+            </svg>
+          </div>
+          <div class="card-body">
+            <h3>放学后的社团日志</h3>
+            <div class="card-meta"><em>校园群像</em><span>全 12 话</span><span>周一 20:00</span></div>
+            <p>以社团活动为线索的日常向作品，节奏舒缓，适合喜欢群像刻画的观众。</p>
+            <a class="card-link" href="#library">查看作品详情 →</a>
+          </div>
+        </article>
+        <article class="anime-card">
+          <div class="card-art">
+            <svg viewBox="0 0 320 132" preserveAspectRatio="none" aria-hidden="true">
+              <rect width="320" height="132" fill="#dff2fb"/>
+              <polygon points="60,110 110,30 160,110" fill="#3aa8d8" opacity=".5"/>
+              <polygon points="150,110 200,44 250,110" fill="#1b1f3b" opacity=".3"/>
+              <circle cx="255" cy="34" r="14" fill="#f2b53c" opacity=".8"/>
+            </svg>
+          </div>
+          <div class="card-body">
+            <h3>雾港旅人</h3>
+            <div class="card-meta"><em>奇幻冒险</em><span>全 24 话</span><span>周四 22:30</span></div>
+            <p>双主角在雾港城市中寻找失落地图，世界观铺陈扎实，适合连续追看。</p>
+            <a class="card-link" href="#library">查看作品详情 →</a>
+          </div>
+        </article>
+        <article class="anime-card">
+          <div class="card-art">
+            <svg viewBox="0 0 320 132" preserveAspectRatio="none" aria-hidden="true">
+              <rect width="320" height="132" fill="#fdf1d6"/>
+              <rect x="40" y="60" width="70" height="52" rx="8" fill="#f2b53c" opacity=".6"/>
+              <rect x="130" y="40" width="60" height="72" rx="8" fill="#ff6f9c" opacity=".45"/>
+              <rect x="210" y="72" width="66" height="40" rx="8" fill="#3aa8d8" opacity=".45"/>
+            </svg>
+          </div>
+          <div class="card-body">
+            <h3>面包房的三点钟</h3>
+            <div class="card-meta"><em>治愈日常</em><span>全 10 话</span><span>周日 18:00</span></div>
+            <p>小店经营题材的短篇系列，每话独立成章，适合碎片时间观看。</p>
+            <a class="card-link" href="#library">查看作品详情 →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 剧场与长篇 -->
+  <section id="theater" style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-kicker">THEATER &amp; SERIES</div>
+        <h2 class="sec-title">剧场版与经典长篇</h2>
+        <p class="sec-desc">除当季新番外，动漫官网也收录剧场版单作与长年连载系列，按单次观看与长期追更两种需求分栏。</p>
+      </div>
+      <div class="split">
+        <div class="panel">
+          <h2>剧场版单作</h2>
+          <div class="sub">一次性观看 · 约 100 分钟</div>
+          <ul class="plain-list">
+            <li><b>星轨列车</b><span>科幻题材单作，讲述末班列车上的相遇，画面与配乐评价集中。</span></li>
+            <li><b>夏日回声</b><span>青春成长主题，以小镇暑假为背景，适合与家人共同观看。</span></li>
+            <li><b>纸上王国</b><span>手绘风格奇幻作，叙事围绕一本旧画册展开。</span></li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h2>经典长篇系列</h2>
+          <div class="sub">长期追更 · 百话以上</div>
+          <ul class="plain-list">
+            <li><b>远海纪元</b><span>航海冒险题材，分季放送，适合按季度连续补番。</span></li>
+            <li><b>剑与灯火</b><span>群像战斗长篇，支线人物众多，建议按放送顺序观看。</span></li>
+            <li><b>城市观察员</b><span>单元剧结构，每话独立，可从任意话数入门。</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 作品库筛选 -->
+  <section id="library" class="filter-sec">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-kicker">LIBRARY</div>
+        <h2 class="sec-title">作品库快速筛选</h2>
+        <p class="sec-desc">输入作品名关键词，或按类型筛选，快速定位想看的内容。所有条目均直接列在本页，无需跳转。</p>
+      </div>
+      <div class="filter-bar">
+        <input id="q" type="search" placeholder="搜索作品名，例如：雾港、面包房" aria-label="搜索作品名">
+        <div class="chips" role="group" aria-label="按类型筛选">
+          <button class="chip" data-cat="全部" aria-pressed="true">全部</button>
+          <button class="chip" data-cat="校园" aria-pressed="false">校园</button>
+          <button class="chip" data-cat="奇幻" aria-pressed="false">奇幻</button>
+          <button class="chip" data-cat="治愈" aria-pressed="false">治愈</button>
+          <button class="chip" data-cat="剧场版" aria-pressed="false">剧场版</button>
+        </div>
+      </div>
+      <p class="result-note" id="note">共 9 部作品</p>
+      <div class="result-grid" id="grid">
+        <div class="res-item" data-cat="校园" data-name="放学后的社团日志"><b>放学后的社团日志</b><span>校园 · 全 12 话</span></div>
+        <div class="res-item" data-cat="奇幻" data-name="雾港旅人"><b>雾港旅人</b><span>奇幻 · 全 24 话</span></div>
+        <div class="res-item" data-cat="治愈" data-name="面包房的三点钟"><b>面包房的三点钟</b><span>治愈 · 全 10 话</span></div>
+        <div class="res-item" data-cat="剧场版" data-name="星轨列车"><b>星轨列车</b><span>剧场版 · 单作</span></div>
+        <div class="res-item" data-cat="剧场版" data-name="夏日回声"><b>夏日回声</b><span>剧场版 · 单作</span></div>
+        <div class="res-item" data-cat="奇幻" data-name="纸上王国"><b>纸上王国</b><span>奇幻 · 剧场版</span></div>
+        <div class="res-item" data-cat="奇幻" data-name="远海纪元"><b>远海纪元</b><span>奇幻 · 长篇系列</span></div>
+        <div class="res-item" data-cat="校园" data-name="剑与灯火"><b>剑与灯火</b><span>校园 · 长篇系列</span></div>
+        <div class="res-item" data-cat="治愈" data-name="城市观察员"><b>城市观察员</b><span>治愈 · 单元剧</span></div>
+      </div>
+      <p class="empty-msg" id="empty">没有匹配的作品，试试更短的关键词或切换类型。</p>
+    </div>
+  </section>
+
+  <!-- 声优访谈 -->
+  <section id="voice">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-kicker">VOICE INTERVIEW</div>
+        <h2 class="sec-title">声优访谈摘录</h2>
+        <p class="sec-desc">动漫官网收录制作方公开的访谈节选，帮助观众了解角色演绎背后的准备过程。</p>
+      </div>
+      <div class="voice-grid">
+        <div class="quote">
+          <p>为了贴近角色的年纪感，我在录音前会先把台词按日常语速念一遍，再调整到镜头需要的节奏。</p>
+          <b>雾港旅人 · 主角配音</b>
+          <span>访谈节选</span>
+        </div>
+        <div class="quote">
+          <p>群像作品最难的是让每句话都带出人物关系，所以对手戏前我们会先对一遍场景设定。</p>
+          <b>放学后的社团日志 · 配角配音</b>
+          <span>访谈节选</span>
+        </div>
+        <div class="quote">
+          <p>剧场版的台词量更集中，情绪起伏要在两小时内完成，排练次数比电视动画更多。</p>
+          <b>星轨列车 · 主演配音</b>
+          <span>访谈节选</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 观看指引 + 下载 -->
+  <section id="guide" style="background:#fff;border-top:1px solid var(--line);">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-kicker">HOW TO WATCH</div>
+        <h2 class="sec-title">观看与追番指引</h2>
+        <p class="sec-desc">从选片到追更，动漫官网把常见流程拆成三步，减少在多个页面之间来回查找。</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <h3>先定类型</h3>
+          <p>在作品库按校园、奇幻、治愈或剧场版筛选，缩小范围后再看简介判断基调。</p>
+        </div>
+        <div class="step">
+          <h3>核对放送信息</h3>
+          <p>新番区标注每周放送日与当前话数，长篇系列标注建议观看顺序。</p>
+        </div>
+        <div class="step">
+          <h3>建立追番清单</h3>
+          <p>把想看的作品记入自己的清单，按放送日排序，避免漏看更新。</p>
+        </div>
+      </div>
+
+      <div class="cta-band" style="margin-top:44px;">
+        <div>
+          <h2>获取动漫官网作品目录</h2>
+          <p>目录包含本季新番、剧场版单作与经典长篇的基础信息，方便离线查看与整理自己的追番计划。</p>
+        </div>
+        <a class="btn-download" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1" role="button" aria-label="下载作品目录">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 3v12"/><path d="M7 11l5 5 5-5"/><path d="M4 20h16"/>
+          </svg>
+          下载
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="brand" style="margin-bottom:6px;">
+          <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="16" fill="#262a52"/>
+            <circle cx="24" cy="28" r="6" fill="#ff8fb1"/>
+            <circle cx="40" cy="28" r="6" fill="#ffd166"/>
+            <path d="M18 44c4-6 24-6 28 0" stroke="#7cd4f7" stroke-width="3" fill="none" stroke-linecap="round"/>
+          </svg>
+          <span class="brand-text">动漫官网</span>
+        </div>
+        <p>动漫官网是动画作品的集中浏览入口，按新番放送、剧场版与经典长篇、声优访谈分区呈现，帮助观众快速找到想看的内容。</p>
+      </div>
+      <div>
+        <h3>内容分区</h3>
+        <ul>
+          <li><a href="#new">新番放送</a></li>
+          <li><a href="#theater">剧场与长篇</a></li>
+          <li><a href="#library">作品库</a></li>
+          <li><a href="#voice">声优访谈</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>使用帮助</h3>
+        <ul>
+          <li><a href="#guide">观看与追番指引</a></li>
+          <li><a href="#library">按类型筛选作品</a></li>
+          <li><a href="#top">回到页面顶部</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2024 动漫官网 · 动画作品集中浏览入口</span>
+      <span>作品信息以制作方公开内容为准</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var grid = document.getElementById('grid');
+  var items = Array.prototype.slice.call(grid.querySelectorAll('.res-item'));
+  var note = document.getElementById('note');
+  var empty = document.getElementById('empty');
+  var input = document.getElementById('q');
+  var chips = Array.prototype.slice.call(document.querySelectorAll('.chip'));
+  var activeCat = '全部';
+
+  function apply(){
+    var kw = (input.value || '').trim().toLowerCase();
+    var shown = 0;
+    items.forEach(function(el){
+      var catOk = activeCat === '全部' || el.getAttribute('data-cat') === activeCat;
+      var nameOk = !kw || el.getAttribute('data-name').toLowerCase().indexOf(kw) !== -1;
+      var ok = catOk && nameOk;
+      el.style.display = ok ? '' : 'none';
+      if(ok) shown++;
+    });
+    note.textContent = '共 ' + shown + ' 部作品';
+    empty.style.display = shown === 0 ? 'block' : 'none';
+  }
+
+  chips.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      activeCat = btn.getAttribute('data-cat');
+      chips.forEach(function(b){ b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'); });
+      apply();
+    });
+  });
+
+  input.addEventListener('input', apply);
+  apply();
+})();
+</script>
+</body>
+            </html>
