@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>91免费观看免费-免费观看视频平台_在线观看入口与使用说明</title>
+<meta name="description" content="91免费观看免费提供免费观看视频的在线入口与使用说明，介绍页面访问方式、内容分类浏览、常见问题与使用注意事项，帮助访客快速了解平台功能与访问路径。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23101828'/%3E%3Cpath d='M24 20l22 12-22 12z' fill='%23ff6b4a'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#eef1f7;
+  --muted:#9aa6bd;
+  --bg:#0b1018;
+  --bg2:#111a27;
+  --card:#151f2e;
+  --line:#22303f;
+  --accent:#ff6b4a;
+  --accent2:#3ec7a5;
+  --max:1120px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+img,svg{display:block;max-width:100%}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 22px}
+
+/* header */
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(11,16,24,.86);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:18px;height:66px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px;letter-spacing:.3px;white-space:nowrap}
+.logo .mark{width:32px;height:32px;flex:0 0 32px}
+.logo span{color:var(--ink)}
+.navlinks{display:flex;gap:26px;font-size:14.5px;color:var(--muted)}
+.navlinks a{transition:color .2s}
+.navlinks a:hover{color:var(--accent)}
+.nav-cta{
+  background:var(--accent);color:#160b06;font-weight:700;font-size:14px;
+  padding:9px 18px;border-radius:8px;white-space:nowrap;transition:filter .2s;
+}
+.nav-cta:hover{filter:brightness(1.08)}
+.menu-btn{display:none;background:none;border:1px solid var(--line);border-radius:8px;color:var(--ink);padding:7px 10px;font-size:14px;cursor:pointer}
+
+/* hero */
+.hero{
+  position:relative;overflow:hidden;
+  padding:64px 0 56px;
+  border-bottom:1px solid var(--line);
+  background:
+    radial-gradient(900px 360px at 82% -10%, rgba(255,107,74,.18), transparent 70%),
+    radial-gradient(700px 320px at 6% 110%, rgba(62,199,165,.14), transparent 70%),
+    var(--bg);
+}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center}
+.tag{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12.5px;color:var(--accent2);
+  border:1px solid rgba(62,199,165,.35);border-radius:999px;
+  padding:5px 13px;margin-bottom:20px;letter-spacing:.5px;
+}
+.tag i{width:6px;height:6px;border-radius:50%;background:var(--accent2);display:block}
+h1{font-size:clamp(28px,4.2vw,44px);line-height:1.25;font-weight:800;letter-spacing:.5px}
+.hero p.lead{color:var(--muted);font-size:16px;margin-top:18px;max-width:34em}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 22px;border-radius:9px;font-size:15px;font-weight:700;
+  transition:transform .15s, filter .2s;
+}
+.btn:active{transform:translateY(1px)}
+.btn-main{background:var(--accent);color:#180b06}
+.btn-main:hover{filter:brightness(1.08)}
+.btn-ghost{border:1px solid var(--line);color:var(--ink);background:var(--bg2)}
+.btn-ghost:hover{border-color:var(--accent2);color:var(--accent2)}
+.btn.off{opacity:.55;filter:grayscale(.4);pointer-events:none;cursor:default}
+.hero-facts{display:flex;gap:30px;margin-top:34px;flex-wrap:wrap}
+.fact b{display:block;font-size:22px;color:var(--accent2);font-weight:800}
+.fact span{font-size:13px;color:var(--muted)}
+
+.hero-art{
+  background:linear-gradient(160deg,#182436,#101826);
+  border:1px solid var(--line);border-radius:18px;padding:18px;
+  box-shadow:0 26px 60px -30px rgba(0,0,0,.9);
+}
+.screen{
+  border-radius:12px;overflow:hidden;background:#0a111b;border:1px solid #1d2a3a;
+  aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;position:relative;
+}
+.screen::after{
+  content:"";position:absolute;inset:0;
+  background:repeating-linear-gradient(90deg,rgba(255,255,255,.025) 0 1px,transparent 1px 7px);
+}
+.play{
+  width:58px;height:58px;border-radius:50%;background:var(--accent);
+  display:flex;align-items:center;justify-content:center;position:relative;z-index:2;
+  box-shadow:0 0 0 12px rgba(255,107,74,.12);
+}
+.play svg{width:22px;height:22px;margin-left:3px}
+.art-rows{display:grid;gap:9px;margin-top:14px}
+.art-row{height:9px;border-radius:5px;background:#1e2b3b}
+.art-row:nth-child(1){width:78%;background:#2a3a4d}
+.art-row:nth-child(2){width:56%}
+.art-row:nth-child(3){width:66%}
+
+/* section base */
+section{padding:60px 0}
+.sec-head{margin-bottom:30px;max-width:46em}
+.sec-head .kicker{font-size:12.5px;letter-spacing:1.6px;color:var(--accent);font-weight:700;text-transform:uppercase}
+.sec-head h2{font-size:clamp(21px,2.6vw,28px);font-weight:800;margin-top:8px;line-height:1.35}
+.sec-head p{color:var(--muted);font-size:15px;margin-top:10px}
+
+/* catalog */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:22px 20px;transition:border-color .2s,transform .2s;
+}
+.card:hover{border-color:#31465c;transform:translateY(-2px)}
+.card .ico{
+  width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;
+  background:rgba(255,107,74,.12);margin-bottom:14px;
+}
+.card .ico svg{width:20px;height:20px}
+.card h3{font-size:16.5px;font-weight:700;margin-bottom:8px}
+.card p{font-size:14px;color:var(--muted)}
+.card .meta{margin-top:14px;font-size:12.5px;color:var(--accent2);letter-spacing:.3px}
+
+/* steps */
+.steps-wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:start}
+.steps{display:grid;gap:14px}
+.step{
+  display:flex;gap:16px;background:var(--bg2);border:1px solid var(--line);
+  border-radius:12px;padding:18px 20px;
+}
+.step .num{
+  flex:0 0 34px;height:34px;border-radius:9px;background:#1d2a3a;color:var(--accent2);
+  display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14.5px;
+}
+.step h3{font-size:15.5px;margin-bottom:5px}
+.step p{font-size:13.8px;color:var(--muted)}
+.note{
+  margin-top:22px;font-size:13.5px;color:var(--muted);
+  border-left:3px solid var(--accent);padding:12px 0 12px 16px;background:rgba(255,107,74,.05);
+  border-radius:0 8px 8px 0;
+}
+
+/* faq */
+.faq{display:grid;gap:12px}
+details{
+  background:var(--card);border:1px solid var(--line);border-radius:12px;
+  padding:16px 20px;
+}
+details[open]{border-color:#31465c}
+summary{
+  cursor:pointer;font-size:15.5px;font-weight:700;list-style:none;
+  display:flex;justify-content:space-between;align-items:center;gap:16px;
+}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--accent);font-size:20px;font-weight:400;line-height:1}
+details[open] summary::after{content:"–"}
+details p{font-size:14px;color:var(--muted);margin-top:12px}
+
+/* about text */
+.about{
+  background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.about h2{font-size:clamp(20px,2.4vw,26px);font-weight:800;margin-bottom:16px}
+.about p{font-size:14.8px;color:var(--muted);margin-bottom:14px}
+.about p strong{color:var(--ink);font-weight:700}
+
+/* footer */
+footer{border-top:1px solid var(--line);padding:40px 0 30px;background:#080d14}
+.foot-top{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;padding-bottom:26px;border-bottom:1px solid var(--line)}
+.foot-brand{max-width:32em}
+.foot-brand .logo{margin-bottom:12px}
+.foot-brand p{font-size:13.5px;color:var(--muted)}
+.foot-links{display:flex;gap:52px;flex-wrap:wrap}
+.foot-col h4{font-size:13px;color:var(--ink);margin-bottom:12px;letter-spacing:.5px}
+.foot-col a{display:block;font-size:13.5px;color:var(--muted);margin-bottom:8px}
+.foot-col a:hover{color:var(--accent2)}
+.copy{padding-top:20px;font-size:12.5px;color:#5d6b82;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+@media (max-width:900px){
+  .hero-grid,.steps-wrap,.about-grid{grid-template-columns:1fr}
+  .cards{grid-template-columns:1fr 1fr}
+  .hero-art{order:-1;max-width:460px}
+  .hero{padding:40px 0 44px}
+}
+@media (max-width:680px){
+  .navlinks{
+    display:none;position:absolute;top:66px;left:0;right:0;
+    flex-direction:column;gap:0;background:#0d141e;border-bottom:1px solid var(--line);
+    padding:8px 22px 16px;
+  }
+  .navlinks.open{display:flex}
+  .navlinks a{padding:11px 0;border-bottom:1px solid #16202c}
+  .menu-btn{display:block}
+  .nav-cta{display:none}
+  .cards{grid-template-columns:1fr}
+  section{padding:44px 0}
+  .hero-facts{gap:22px}
+  .fact b{font-size:19px}
+  .foot-links{gap:32px}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top" aria-label="91免费观看免费 首页">
+      <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#141e2c" stroke="#2a3a4d"/>
+        <path d="M24 20l22 12-22 12z" fill="#ff6b4a"/>
+      </svg>
+      <span>91免费观看免费</span>
+    </a>
+    <nav class="navlinks" id="navlinks" aria-label="主导航">
+      <a href="#catalog">内容分类</a>
+      <a href="#howto">访问方式</a>
+      <a href="#faq">常见问题</a>
+      <a href="#about">平台说明</a>
+    </nav>
+    <a class="nav-cta" href="#howto">开始观看</a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navlinks">菜单</button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="tag"><i></i>免费在线观看入口</div>
+        <h1>91免费观看免费</h1>
+        <p class="lead">一个以免登录浏览为特点的视频观看入口。页面把内容分类、访问步骤和常见问题集中呈现，方便你先了解平台怎么用，再决定从哪里进入观看。</p>
+        <div class="hero-actions">
+          <a class="btn btn-main" href="#catalog">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 5l11 7-11 7z" fill="#180b06"/></svg>
+            浏览内容分类
+          </a>
+          <a class="btn btn-ghost" href="#howto">查看访问步骤</a>
+        </div>
+        <div class="hero-facts">
+          <div class="fact"><b>3 类</b><span>内容浏览方向</span></div>
+          <div class="fact"><b>4 步</b><span>访问流程说明</span></div>
+          <div class="fact"><b>免注册</b><span>浏览基础页面</span></div>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="screen">
+          <div class="play">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M8 5l11 7-11 7z" fill="#180b06"/></svg>
+          </div>
+        </div>
+        <div class="art-rows">
+          <div class="art-row"></div>
+          <div class="art-row"></div>
+          <div class="art-row"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CATALOG -->
+  <section id="catalog">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">Content</div>
+        <h2>内容分类与浏览方向</h2>
+        <p>91免费观看免费把可浏览的内容按观看习惯归为几个方向。分类的作用是减少盲目翻找，让你先定位兴趣范围，再进入具体条目。</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#ff6b4a" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9l5 3-5 3z" fill="#ff6b4a" stroke="none"/></svg>
+          </div>
+          <h3>影视片单</h3>
+          <p>按题材与时长整理的观看列表，适合想快速选定一段完整内容的访客。列表页只展示标题与简介，点开后再进入播放页。</p>
+          <div class="meta">适合：有明确观看目标</div>
+        </article>
+        <article class="card">
+          <div class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#3ec7a5" stroke-width="1.8"><path d="M4 18V7l8-3 8 3v11"/><path d="M4 18h16"/><circle cx="12" cy="13" r="2.4"/></svg>
+          </div>
+          <h3>精选推荐</h3>
+          <p>由编辑按更新节奏挑选的条目合集，帮助没有明确方向的访客先看几段代表内容，再决定是否深入浏览。</p>
+          <div class="meta">适合：先逛后选</div>
+        </article>
+        <article class="card">
+          <div class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#8fb0ff" stroke-width="1.8"><path d="M5 4h14v16H5z"/><path d="M9 8h6M9 12h6M9 16h4"/></svg>
+          </div>
+          <h3>专题合集</h3>
+          <p>围绕同一主题聚合多条内容，适合连续观看。专题页会标明条目数量与大致时长，方便安排观看顺序。</p>
+          <div class="meta">适合：连续观看</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW TO -->
+  <section id="howto" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">Access</div>
+        <h2>访问 91免费观看免费 的四个步骤</h2>
+        <p>下面的流程按实际访问顺序排列。每一步都对应页面上的一个动作，不涉及额外注册或付费环节。</p>
+      </div>
+      <div class="steps-wrap">
+        <div class="steps">
+          <div class="step">
+            <div class="num">1</div>
+            <div><h3>打开入口页面</h3><p>在浏览器地址栏输入站点地址，进入 91免费观看免费 首页。建议使用较新版本的主流浏览器，以获得正常的播放与排版效果。</p></div>
+          </div>
+          <div class="step">
+            <div class="num">2</div>
+            <div><h3>选择内容分类</h3><p>从片单、推荐或专题中挑一个方向，浏览标题与简介。分类页信息密度较低，适合先做粗筛。</p></div>
+          </div>
+          <div class="step">
+            <div class="num">3</div>
+            <div><h3>进入播放页</h3><p>点击感兴趣的条目后进入播放界面，确认清晰度与播放状态。若加载缓慢，可先暂停数秒等待缓冲。</p></div>
+          </div>
+          <div class="step">
+            <div class="num">4</div>
+            <div><h3>按需调整设置</h3><p>在播放器中切换清晰度、音量与全屏模式。移动端建议横屏观看，桌面端可使用全屏减少干扰。</p></div>
+          </div>
+        </div>
+        <div>
+          <div class="note">
+            <strong style="color:var(--ink)">使用提示：</strong>91免费观看免费的浏览过程以页面直接访问为主，不需要提前安装客户端。遇到页面无法加载时，先检查网络连接与浏览器缓存，再尝试更换浏览器或稍后重试。观看体验受网络带宽影响较大，高清内容建议在网络稳定时使用。
+          </div>
+          <div class="note" style="margin-top:16px">
+            <strong style="color:var(--ink)">关于下载：</strong>本站暂不提供离线下载服务，页面中的下载入口处于占位状态，待后续开放。当前建议通过在线播放方式观看。
+          </div>
+          <div style="margin-top:22px">
+            <a class="btn btn-main off" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#180b06" stroke-width="2" aria-hidden="true"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></svg>
+              下载
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">FAQ</div>
+        <h2>常见问题</h2>
+        <p>整理访客在首次使用 91免费观看免费 时最常提出的几个问题，答案基于当前页面功能范围。</p>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>观看需要注册账号吗？</summary>
+          <p>浏览分类页与进入播放页都不强制注册。部分个性化功能若后续开放，可能会要求登录，届时会在页面明确提示。</p>
+        </details>
+        <details>
+          <summary>为什么视频加载比较慢？</summary>
+          <p>常见原因是网络带宽不足或浏览器缓存过多。可以先暂停播放等待缓冲，或清理缓存后刷新页面。更换网络环境通常也能改善。</p>
+        </details>
+        <details>
+          <summary>手机和电脑都能看吗？</summary>
+          <p>页面采用自适应布局，手机、平板与桌面浏览器均可访问。手机端建议横屏并使用全屏模式，以获得更完整的画面比例。</p>
+        </details>
+        <details>
+          <summary>内容多久更新一次？</summary>
+          <p>更新节奏随内容来源变化，推荐与专题栏目会优先展示较新的条目。具体更新情况以页面实际显示为准。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="wrap">
+      <div class="about-grid">
+        <div>
+          <h2>关于 91免费观看免费</h2>
+          <p><strong>91免费观看免费</strong>是一个以免费在线观看为核心定位的页面入口。它把内容分类、访问路径和使用说明放在同一处，让访客不必在多个页面之间反复跳转，就能先了解清楚再开始观看。</p>
+          <p>页面的信息组织围绕“看什么、怎么看、遇到问题怎么办”三个问题展开：分类区回答看什么，步骤区回答怎么看，问题区回答怎么办。这样的结构适合第一次到访、还不熟悉平台的人。</p>
+        </div>
+        <div>
+          <h2>使用前的几点说明</h2>
+          <p>观看体验与设备、网络和浏览器版本相关，页面本身不承诺固定画质。内容来源与更新状态以实际显示为准，页面描述只反映当前可见的功能范围。</p>
+          <p>我们建议合理安排观看时间，注意用眼与休息。若在访问 91免费观看免费 的过程中遇到页面显示异常，可通过更换浏览器或稍后重试的方式排查。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="logo">
+          <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#141e2c" stroke="#2a3a4d"/>
+            <path d="M24 20l22 12-22 12z" fill="#ff6b4a"/>
+          </svg>
+          <span>91免费观看免费</span>
+        </div>
+        <p>免费在线观看入口与使用说明。内容分类、访问步骤与常见问题集中呈现，帮助访客快速找到想看的条目。</p>
+      </div>
+      <div class="foot-links">
+        <div class="foot-col">
+          <h4>页面导航</h4>
+          <a href="#catalog">内容分类</a>
+          <a href="#howto">访问方式</a>
+          <a href="#faq">常见问题</a>
+          <a href="#about">平台说明</a>
+        </div>
+        <div class="foot-col">
+          <h4>使用相关</h4>
+          <a href="#howto">播放设置</a>
+          <a href="#faq">加载排查</a>
+          <a href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1" style="pointer-events:none;opacity:.55">下载</a>
+        </div>
+      </div>
+    </div>
+    <div class="copy">
+      <span>© 2025 91免费观看免费 · 页面内容仅供参考</span>
+      <span>观看请合理安排时间</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var btn=document.getElementById('menuBtn');
+    var nav=document.getElementById('navlinks');
+    if(!btn||!nav)return;
+    btn.addEventListener('click',function(){
+      var open=nav.classList.toggle('open');
+      btn.setAttribute('aria-expanded',open?'true':'false');
+    });
+    nav.addEventListener('click',function(e){
+      if(e.target.tagName==='A'){nav.classList.remove('open');btn.setAttribute('aria-expanded','false');}
+    });
+  })();
+</script>
+</body>
+</html>
